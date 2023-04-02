@@ -29,9 +29,9 @@ function Home() {
         <div className='divCanciones'>
           <ListaCanciones eventos={eventos} />
         </div>
-        <div className='divReproductor'>
-          <label className='titulo'>{cancion} </label>
+        <div className='contenedorDivResproductor'>
           <ReproductorAudio cancion={cancion} />
+ 
         </div>
       </div>
 
