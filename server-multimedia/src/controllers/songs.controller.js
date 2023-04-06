@@ -105,8 +105,15 @@ const getSongPath = async (nameSong) =>{
     return path.join(process.env.RUTA_ARCHIVOS, nameSong);
 }
 
+const updateSong = async  (_id,data) => {
+    return await SongsModel.updateOne({_id:_id},data).then(() => "OK").catch(err => err.code);
+}
+const deleteSong = async  (_id) => {
+    return await SongsModel.deleteOne({_id:_id}).then(() => "OK").catch(err => err.code);
+}
 
-module.exports = { readfiles,getSongsData,getSongPath }
+module.exports = { readfiles,getSongsData,getSongPath,updateSong,deleteSong }
+
 
 
 /*
