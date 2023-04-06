@@ -97,14 +97,14 @@
   .contenedorDivResproductor{
     width: 100%;
     height: auto;
-    background-color: #353535;
+    background-color: #292929;
     padding: 5px;
   }
 
   .divReproductor{
     height:100%;
     width: 100%;
-    background-color: #353535;
+    background-color: #292929;
     display: grid;
     grid-template-columns:  30vw 69vw;
     grid-template-rows: 10vh 5vh 5vh ;

@@ -1,10 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './paginas/Home'
-import './index.css'
+import {RouterProvider} from 'react-router-dom'
+import './assets/index.css'
+import './assets/css/material-kit.min.css'
+import './assets/js/core/bootstrap.min.js'
+import './assets/js/core/popper.min.js'
+import './assets/js/material-kit.min.js'
+import './assets/fontawesome-6.4.0/css/fontawesome.css'
+import './assets/fontawesome-6.4.0/css/solid.css'
+import {router} from './config/routes/routes'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Home />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

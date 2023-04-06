@@ -1,9 +1,7 @@
 import { useRef, useState } from 'react'
-import '../assets/css/material-kit.min.css'
 import '../assets/paginas/Home.css'
-import '../components/ListaCanciones'
-import ListaCanciones from '../components/ListaCanciones'
-import ReproductorAudio from '../components/ReproductorAudio'
+import ListaCanciones from '../components/List/ListaCanciones'
+import ReproductorAudio from '../components/Reproductor/ReproductorAudio'
 
 
 function Home() {

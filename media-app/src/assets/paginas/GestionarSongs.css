@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.containerApp{
+    min-height: 100vh;
+    max-height: max-content;
+    background-image: linear-gradient(to right top, #292929, #2e2e2e, #333333, #393939, #3e3e3e, #3e3e3e, #3e3e3e, #3e3e3e, #393939, #333333, #2e2e2e, #292929);
+}
+.containerBody{
+    padding-top: 5%;
+    padding-bottom: 3%;
+    width:100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.custom-shape-divider-top-1680486864 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1680486864 svg {
+    position: relative;
+    display: block;
+    width: calc(134% + 1.3px);
+    height: 141px;
+}
+
+.custom-shape-divider-top-1680486864 .shape-fill {
+    fill:#FF4848;
+}
