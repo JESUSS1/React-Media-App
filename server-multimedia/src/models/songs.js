@@ -9,6 +9,7 @@ const SongShema = new Schema({
     artist:{type:String},
     imageMusic:{type:String,default:""},
     imageAlbun:{type:String,default:""},
+    ruta:{type:String,default:""}
 },{
     timestamps:true
 });

@@ -8,12 +8,12 @@ export default function ReproductorAudio({ cancion }) {
 
     useEffect(() => {
         if (cancion != null) {
-            _handleChangeAudio(cancion.idfile);
+            _handleChangeAudio(cancion._id);
         }
     }, [cancion])
 
-    const _handleChangeAudio = async (idFileSong) => {
-        let url = `${URL_API_GET_SONG}${idFileSong}`
+    const _handleChangeAudio = async (_id) => {
+        let url = `${URL_API_GET_SONG}${_id}`
         setUrlSong(url)
         if (cancion.imageAlbun != "") {
             setIsImage(`${URL_API_GET_IMAGE}${cancion.imageAlbun}`);

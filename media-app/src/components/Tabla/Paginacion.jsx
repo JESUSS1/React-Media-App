@@ -2,8 +2,6 @@ import { useEffect } from "react";
 
 export const Paginacion = ({paginaActual,totalpaginas,_handlePaginaActual}) =>{
 
-    let registros = [];
-
     useEffect(()=>{
         if(totalpaginas == 0 ){
             return;
@@ -15,7 +13,9 @@ export const Paginacion = ({paginaActual,totalpaginas,_handlePaginaActual}) =>{
         const titulos = Array(totalpaginas).fill(null);
         
         return titulos.map((data,key)=>
-            <li key={key} style={{cursor:"pointer"}} className={paginaActual==(key+1)?"page-item active":"page-item"} onClick={()=>_handlePaginaActual(key+1)} ><a className="page-link">{key+1}</a></li>
+            <li key={key} style={{cursor:"pointer"}} className={`page-item ${paginaActual==(key+1)?"active":""}`} onClick={()=>_handlePaginaActual(key+1)} >
+                <a  className={`page-link ${paginaActual==(key+1)?"text-white":""}`}>{key+1}</a>
+            </li>
         )
     }
 

@@ -1,7 +1,7 @@
 let express = require('express');
 const path = require('path');
 const ms = require('mediaserver');
-const {readfiles,getSongsData,getSongPath,updateSong,deleteSong} = require('../src/controllers/songs.controller');
+const {readfiles,getSongsData,getSongPath,updateSong,deleteSong,deleteImagesTrash} = require('../src/controllers/songs.controller');
 
 const SongsRouter = express.Router();
 
@@ -20,8 +20,8 @@ SongsRouter.get('/readfiles', function(req, res){
     catch(err=>res.status(500).json({ error: 'Ocurrió un error al procesar la solicitud. ' + err }));
 });
 
-SongsRouter.get('/song/:name', function (req, res) {
-    getSongPath(req.params.name).
+SongsRouter.get('/song/:id', function (req, res) {
+    getSongPath(req.params.id).
     then(result=> ms.pipe(req, res, result) ).
     catch(err=>res.status(500).json({ error: 'Ocurrió un error al procesar la solicitud. ' + err }));
     //ms.pipe(req, res, result)
@@ -39,6 +39,13 @@ SongsRouter.get('/song/:name', function (req, res) {
     then(result=>res.status(200).json(result)).
     catch(err=>res.status(500).json({ error: 'Ocurrió un error al procesar la solicitud. ' + err }));
   })
+
+  SongsRouter.get('/deleteImagesTrash', function(req, res){
+    //res.set('Access-Control-Allow-Origin', '*');
+    deleteImagesTrash().
+    then(result=>res.status(200).json(result)).
+    catch(err=>res.status(500).json({ error: 'Ocurrió un error al procesar la solicitud. ' + err }));
+});
 
 
 

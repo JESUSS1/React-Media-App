@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { URL_API_LIST_SONGS,URL_API_GET_SONG } from './consts';
+import { URL_API_LIST_SONGS,URL_API_GET_SONG,URL_API_POST_UPDATE_SONG } from './consts';
 
 const serverAxios = axios.create({
     timeout: 5000,
@@ -15,6 +15,19 @@ export const apiGetListaCanciones = async () =>{
     }else{
         console.error(result);
         return [];
+    }
+}
+
+export const apiUpdateSong = async (data) =>{
+    let result = await serverAxios.post(URL_API_POST_UPDATE_SONG,data).
+    then((response) => response).
+    catch((err) =>err.message);
+    if(result.status === 200){
+        //console.log(result.data);
+        return result.status;
+    }else{
+        console.error(result);
+        return result.status;
     }
 }
 

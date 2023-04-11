@@ -1,7 +1,7 @@
 export const Modal = ({ showModal,_handleModal,modalTitle, children }) => {
 
   return (
-    <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden={`${showModal}`}>
+    <div  className={`modal fade`} data-bs-backdrop="static" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered" role="document">
         <div className="modal-content">
           <div className="modal-header">
@@ -14,10 +14,9 @@ export const Modal = ({ showModal,_handleModal,modalTitle, children }) => {
  
           {children}   
            
-
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn bg-gradient-secondary" data-bs-dismiss="modal" onClick={()=>_handleModal(null)} >Close</button>
+            <button type="button" className="btn bg-gradient-secondary"  data-bs-dismiss="modal" onClick={()=>_handleModal(null)} >Close</button>
           </div>
         </div>
       </div>
